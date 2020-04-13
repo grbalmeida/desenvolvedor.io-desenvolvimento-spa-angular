@@ -9,17 +9,17 @@
                         <img src="/assets/{{ produto.imagem }}" height="164px" width="253px" alt="">
                     </div>
                 </a>
-                <h4 class="card-title">{{ produto.nome }}</h4>
+                <h4 class="card-title">{{ produto.nome | titlecase }}</h4>
 
                 <div *ngIf="produto.promocao">
                     <p>Promoção!</p>
-                    <p>Por apenas: {{ produto.valorPromo }}</p>
+                    <p>Por apenas: {{ produto.valorPromo | currency:'BRL':'symbol':'1.2-2':'pt' }}</p>
                 </div>
 
                 <div *ngIf="produto.promocao" class="card-body">
-                    <div><h4 class="card-text">De: {{ produto.valor }}
+                    <div><h4 class="card-text">De: {{ produto.valor | currency:'BRL':'symbol':'1.2-2':'pt' }}
                         <small><del></del></small>
-                        Por: {{ produto.valorPromo }}
+                        Por: {{ produto.valorPromo | currency:'BRL':'symbol':'1.2-2':'pt' }}
                     </h4></div>
                 </div>
 
